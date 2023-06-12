@@ -9,5 +9,5 @@ export type Convert = {
 
   setGMClass?: (gmClass: string | boolean) => void;
 
-  (page?: number, toBase64?: boolean): Promise<WriteImageResponse|ToBase64Response>;
+   <B extends boolean = false>(page?: number, toBase64?: B):  B extends true ? Promise<ToBase64Response> : Promise<WriteImageResponse>;
 }
